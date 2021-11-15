@@ -1,5 +1,5 @@
-#Projeto Final Firefighter
+# Projeto Final Firefighter
 Repositório do projeto final de Jogos Multiplayer
 
-#Autores do projeto:
+#A utores do projeto:
 - Leonardo Korzenowski Saraiva, Gabriel de Oliveira Pedroso, Thiago Gregory Araujo
