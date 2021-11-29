@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Mirror;
 
+//Colocar os paineis em um script separado já presente no jogo
+
 public class PlayerMove : MonoBehaviour
 {
     public CharacterController controller;
