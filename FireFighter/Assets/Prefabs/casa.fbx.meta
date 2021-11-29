@@ -1,0 +1,241 @@
+fileFormatVersion: 2
+guid: 0e3d185f4ad27c14b9e85a60e7e80646
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Armario
+    100002: Armario.001
+    100004: banco 1
+    100006: banco 2
+    100008: base 1
+    100010: base 2
+    100012: cama 2
+    100014: //RootNode
+    100016: coberta 1
+    100018: coberta 2
+    100020: coberta.001
+    100022: colchao 1
+    100024: colchao.001
+    100026: criado mudo
+    100028: Empty
+    100030: Madeira da cama 1
+    100032: Madeira da cama 2
+    100034: mesa
+    100036: Parede Exnterna
+    100038: Parede Interna
+    100040: PIA DO BANHEIRO
+    100042: Piso
+    100044: Porta 1
+    100046: Porta do Forno
+    100048: tela
+    100050: tela.001
+    100052: travesseiros
+    100054: tv
+    100056: vageta criado 3
+    400000: Armario
+    400002: Armario.001
+    400004: banco 1
+    400006: banco 2
+    400008: base 1
+    400010: base 2
+    400012: cama 2
+    400014: //RootNode
+    400016: coberta 1
+    400018: coberta 2
+    400020: coberta.001
+    400022: colchao 1
+    400024: colchao.001
+    400026: criado mudo
+    400028: Empty
+    400030: Madeira da cama 1
+    400032: Madeira da cama 2
+    400034: mesa
+    400036: Parede Exnterna
+    400038: Parede Interna
+    400040: PIA DO BANHEIRO
+    400042: Piso
+    400044: Porta 1
+    400046: Porta do Forno
+    400048: tela
+    400050: tela.001
+    400052: travesseiros
+    400054: tv
+    400056: vageta criado 3
+    2100000: No Name
+    2100002: Material.001
+    2100004: geladeira
+    2100006: Porta geladeira 1
+    2100008: Material.006
+    2100010: Material.003
+    2100012: Material.005
+    2100014: Material.004
+    2100016: cama
+    2100018: "len\xE7ol"
+    2100020: cabeiceira
+    2300000: Armario
+    2300002: Armario.001
+    2300004: banco 1
+    2300006: banco 2
+    2300008: base 1
+    2300010: base 2
+    2300012: cama 2
+    2300014: coberta 1
+    2300016: coberta 2
+    2300018: coberta.001
+    2300020: colchao 1
+    2300022: colchao.001
+    2300024: criado mudo
+    2300026: Madeira da cama 1
+    2300028: Madeira da cama 2
+    2300030: mesa
+    2300032: Parede Exnterna
+    2300034: Parede Interna
+    2300036: PIA DO BANHEIRO
+    2300038: Piso
+    2300040: Porta 1
+    2300042: Porta do Forno
+    2300044: tela
+    2300046: tela.001
+    2300048: travesseiros
+    2300050: tv
+    2300052: vageta criado 3
+    3300000: Armario
+    3300002: Armario.001
+    3300004: banco 1
+    3300006: banco 2
+    3300008: base 1
+    3300010: base 2
+    3300012: cama 2
+    3300014: coberta 1
+    3300016: coberta 2
+    3300018: coberta.001
+    3300020: colchao 1
+    3300022: colchao.001
+    3300024: criado mudo
+    3300026: Madeira da cama 1
+    3300028: Madeira da cama 2
+    3300030: mesa
+    3300032: Parede Exnterna
+    3300034: Parede Interna
+    3300036: PIA DO BANHEIRO
+    3300038: Piso
+    3300040: Porta 1
+    3300042: Porta do Forno
+    3300044: tela
+    3300046: tela.001
+    3300048: travesseiros
+    3300050: tv
+    3300052: vageta criado 3
+    4300000: mesa
+    4300002: Porta 1
+    4300004: Porta do Forno
+    4300006: PIA DO BANHEIRO
+    4300008: banco 1
+    4300010: banco 2
+    4300012: Armario
+    4300014: Armario.001
+    4300016: base 1
+    4300018: base 2
+    4300020: coberta.001
+    4300022: colchao.001
+    4300024: travesseiros
+    4300026: cama 2
+    4300028: coberta 2
+    4300030: Madeira da cama 2
+    4300032: colchao 1
+    4300034: coberta 1
+    4300036: Madeira da cama 1
+    4300038: criado mudo
+    4300040: vageta criado 3
+    4300042: Piso
+    4300044: Parede Exnterna
+    4300046: Parede Interna
+    4300048: tela
+    4300050: tv
+    4300052: tela.001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
