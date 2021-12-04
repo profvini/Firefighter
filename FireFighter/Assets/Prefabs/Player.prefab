@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 2004814408747498397}
   - component: {fileID: -4865195867679741688}
   - component: {fileID: 5904587472318197635}
+  - component: {fileID: 8590354419713226432}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -169,7 +170,7 @@ MonoBehaviour:
   controller: {fileID: 2004814408747498399}
   speed: 4
   gravity: -19.62
-  jumpHeight: 3
+  jumpHeight: 2
   groundcheck: {fileID: 2004814409204013217}
   groundDistance: 0.4
   groundMask:
@@ -177,24 +178,34 @@ MonoBehaviour:
     m_Bits: 512
   distanceOfRaycast: 4
   isPause: 0
-  panelPause: {fileID: 0}
-  panelDeath: {fileID: 0}
-  panelEnd: {fileID: 0}
-  saveBar: {fileID: 0}
-  saveBartext: {fileID: 0}
-  saveImage: {fileID: 0}
-  saveImageBG: {fileID: 0}
-  oxigImage: {fileID: 0}
-  imgCarrying: {fileID: 0}
+  panelPause: {fileID: 5345542901819041603, guid: a3026a037e91df449b4003e3800f9f1f,
+    type: 3}
+  panelDeath: {fileID: 757782073291534977, guid: 00abeef49b82b14438bc84b7772dcaec,
+    type: 3}
+  panelEnd: {fileID: 2001269285388020891, guid: 2bfae67c019f7954fa3920979ed06a1c,
+    type: 3}
+  saveBar: {fileID: 4311324369977696677, guid: dbdb31a89c7796744bfd8bc79af89503, type: 3}
+  saveBartext: {fileID: 5841542069451774175, guid: ee928889011253f43ac41aca6e98557f,
+    type: 3}
+  saveImage: {fileID: 4311324369977696683, guid: dbdb31a89c7796744bfd8bc79af89503,
+    type: 3}
+  saveImageBG: {fileID: 7532493190709583232, guid: f44cd3462bd36774db905a0b3d6a8789,
+    type: 3}
+  oxigImage: {fileID: 2454485070159967574, guid: 2f28a9355c3d34b45ac25ecd546d4b86,
+    type: 3}
+  imgCarrying: {fileID: 4085819135479680958, guid: b86debd1c2c3a514bb281cb09a628a6a,
+    type: 3}
   saveFloat: 0
   isCarrying: 0
   oxigFloat: 100
   lostOxig: 0.3
   canHit: 1
-  crosshair: {fileID: 0}
+  crosshair: {fileID: 5389392084764123626, guid: 308c042bab73bce46be008f0acaf87d5,
+    type: 3}
   savePerson: {fileID: 0}
   saveLifes: 0
-  txtSaveLifes: {fileID: 0}
+  txtSaveLifes: {fileID: 2735190218749839265, guid: aaa0942120e54f745b89d65855545d7e,
+    type: 3}
   isDead: 0
 --- !u!54 &2004814408747498397
 Rigidbody:
@@ -258,6 +269,25 @@ MonoBehaviour:
   showGizmos: 0
   showOverlay: 0
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+--- !u!114 &8590354419713226432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004814408747498393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d49605be707dd44eae897eeabfd8a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 2004814408420776635}
+  smoothV: {x: 0, y: 0}
+  mouseLook: {x: 0, y: 0}
+  sens: 0
+  smoth: 0
+  _playerS: {fileID: 2004814408747498397}
+  _playerM: {fileID: 0}
 --- !u!1 &2004814409204013216
 GameObject:
   m_ObjectHideFlags: 0

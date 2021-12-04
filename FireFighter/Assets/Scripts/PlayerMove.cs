@@ -50,10 +50,11 @@ public class PlayerMove : MonoBehaviour
 
     private void Awake()
     {
-        panelPause = GameObject.Find("panelPause");
-        panelDeath = GameObject.Find("panelDeath");
-        panelEnd = GameObject.Find("panelEnd");
-        
+       
+
+
+
+
     }
 
     void Start()
@@ -70,6 +71,10 @@ public class PlayerMove : MonoBehaviour
         saveImageBG.enabled = false;
         imgCarrying.enabled = false;
         _ps = GetComponent<ParticleSystem>();
+
+        panelPause = FindObjectOfType<GameObject>();
+        panelDeath = FindObjectOfType<GameObject>();
+        panelEnd = GameObject.Find("Panels/PanelEnd");
     }
 
     // Update is called once per frame

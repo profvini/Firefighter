@@ -31,9 +31,17 @@ public class CameraController : MonoBehaviour
         mouseLook += smoothV;
 
         if (mouseLook.y < -70)
+        {
             mouseLook.y = -70f;
+            Debug.Log("aqui embaixo");
+        }
+           
         if (mouseLook.y >= 90)
+        {
             mouseLook.y = 90f;
+            Debug.Log("aqui em cima");
+        }
+            
         if (_playerM.isPause == false)
         {
             _playerS.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, _playerS.transform.up);
