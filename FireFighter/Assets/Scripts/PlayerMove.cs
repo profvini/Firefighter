@@ -7,7 +7,7 @@ using Mirror;
 
 //Colocar os paineis em um script separado já presente no jogo
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : NetworkBehaviour
 {
     public CharacterController controller;
     public float speed = 12f;
@@ -24,20 +24,21 @@ public class PlayerMove : MonoBehaviour
     public float distanceOfRaycast;
 
     public bool isPause = false;
-    public GameObject panelPause, panelDeath, panelEnd;
+    public GameObject panels, panelPause, panelDeath, panelEnd;
     
 
     RaycastHit _hit;
 
-    public GameObject saveBar, saveBartext;
-    public Image saveImage, saveImageBG, oxigImage, imgCarrying;
+    public GameObject saveBar, saveBartext, oxigImage, saveImage, saveImageBG;
+    public Image imgCarrying; //oxigImage, saveImage, saveImageBG
     public float saveFloat = 0f;
 
     public bool isCarrying = false;
 
     public float oxigFloat = 100, lostOxig = 0.3f;
     public bool canHit = true;
-    public Image crosshair;
+    public GameObject crosshair;
+    //public Image crosshair;
     public GameObject savePerson = null;
 
     public int saveLifes = 0;
@@ -59,6 +60,21 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {     
+        
+
+        _ps = GetComponent<ParticleSystem>();
+
+        crosshair = GameObject.Find("Panels/Crosshair");
+        panels = GameObject.Find("Panels");
+        panelPause = GameObject.Find("Panels/PanelPause");
+        panelDeath = GameObject.Find("Panels/DeathPanel");
+        panelEnd = GameObject.Find("Panels/PanelEnd");
+        oxigImage = GameObject.Find("Panels/PanelGame/ImageOxig");
+        saveImage = GameObject.Find("Panels/PanelGame/SaveBar");
+        saveImageBG = GameObject.Find("Panels/PanelGame/SaveBarBG");
+        txtSaveLifes = GameObject.Find("Panels/txtSaveLifes").GetComponent<Text>();
+        
+
 
         txtSaveLifes.text = "Lifes = " + saveLifes.ToString() + "/3";
         isDead = false;
@@ -68,19 +84,15 @@ public class PlayerMove : MonoBehaviour
         panelPause.SetActive(false);
         panelDeath.SetActive(false);
         panelEnd.SetActive(false);
-        saveImageBG.enabled = false;
+        saveImageBG.SetActive(false);
         imgCarrying.enabled = false;
-        _ps = GetComponent<ParticleSystem>();
-
-        panelPause = FindObjectOfType<GameObject>();
-        panelDeath = FindObjectOfType<GameObject>();
-        panelEnd = GameObject.Find("Panels/PanelEnd");
+        panels.GetComponent<Canvas>().enabled = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //hudAction();
+        hudAction();
 
         gamePause();
 
@@ -140,11 +152,11 @@ public class PlayerMove : MonoBehaviour
 
 
 
-    //void hudAction()
-    //{
-    //    oxigFloat -= Time.deltaTime * lostOxig;
-    //    oxigImage.fillAmount = oxigFloat / 100;
-    //}
+    void hudAction()
+    {
+        oxigFloat -= Time.deltaTime * lostOxig;
+        oxigImage.GetComponent<Image>().fillAmount = oxigFloat / 100;
+    }
 
     void actionPlayer()
     {
@@ -155,11 +167,11 @@ public class PlayerMove : MonoBehaviour
 
             if (_hit.transform.CompareTag("Obj"))
             {
-                saveImageBG.enabled = true;
+                saveImageBG.GetComponent<Image>().enabled = true;
             }
             else
             {
-                saveImageBG.enabled = false;
+                saveImageBG.GetComponent<Image>().enabled = false;
             }
 
             if (Input.GetButton("Fire1") && _hit.transform.CompareTag("Obj") && !isCarrying)
@@ -167,13 +179,14 @@ public class PlayerMove : MonoBehaviour
                 saveFloat += Time.deltaTime * 20f;
                 saveBar.SetActive(true);
                 saveBartext.SetActive(true);
-                saveImage.fillAmount = saveFloat / 100;
+                saveImage.GetComponent<Image>().fillAmount = saveFloat / 100;
 
                 if (saveFloat >= 100)
                 {
                     //som que pegou o npc
                     //imagem de carregando uma pessoa
                     //nao pode carregar outra !!!!!!!
+                    saveFloat = 0;
                     isCarrying = true;
                     imgCarrying.enabled = true;
                     _hit.transform.gameObject.GetComponent<npcScript>().objInterection();
@@ -182,7 +195,24 @@ public class PlayerMove : MonoBehaviour
 
             }
 
-          
+            if (Input.GetButtonUp("Fire1"))
+            {
+                saveBar.SetActive(false);
+                saveBartext.SetActive(false);
+                saveImage.GetComponent<Image>().fillAmount = 0;
+
+                saveFloat = 0f;
+            }
+
+            if (_hit.transform.CompareTag("Obj"))
+            {
+                saveImageBG.SetActive(true);
+            }
+            else
+            {
+                saveImageBG.SetActive(false);
+            }
+
 
             if (Input.GetButtonDown("Fire1") && _hit.transform.CompareTag("Door") && canHit)
             {
@@ -203,32 +233,32 @@ public class PlayerMove : MonoBehaviour
                 saveFloat += Time.deltaTime * 20f;
                 saveBar.SetActive(true);
                 saveBartext.SetActive(true);
-                saveImage.fillAmount = saveFloat / 100;
+                saveImage.GetComponent<Image>().fillAmount = saveFloat / 100;
 
                 if (saveFloat >= 100)
                 {
                     Destroy(_hit.transform.gameObject);
                 }
             }
-
+            /*
             else
             {
                 saveBar.SetActive(false);
                 saveBartext.SetActive(false);
 
                 saveFloat = 0f;
-            }
+            }*/
         }
     }
     void crosshairHit()
     {
         if (_hit.collider.gameObject.CompareTag("Door") || _hit.transform.CompareTag("Obj") || _hit.transform.CompareTag("OpenDoor") || _hit.collider.gameObject.CompareTag("hotZone"))
         {
-            crosshair.color = Color.green;
+            crosshair.GetComponent<Image>().color = Color.green;
         }
         else
         {
-            crosshair.color = Color.white;
+            crosshair.GetComponent<Image>().color = Color.white;
         }
     }
 
@@ -262,7 +292,8 @@ public class PlayerMove : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("safe"))
+
+        if (other.CompareTag("safe") && isCarrying)
         {
             //som de salvando uma pessoa pode ser stay here.
             // I will be back
@@ -270,7 +301,7 @@ public class PlayerMove : MonoBehaviour
             imgCarrying.enabled = false;
             if (savePerson != null)
             {
-                savePerson.transform.gameObject.GetComponent<npcScript>().objSave();
+                savePerson.transform.gameObject.GetComponent<npcScript>().objSave(saveLifes);
                 saveLifes++;
                 txtSaveLifes.text = "Lifes = " + saveLifes.ToString() + "/6";
                 // other.transform.gameObject.GetComponent<npcScript>().objSave();
