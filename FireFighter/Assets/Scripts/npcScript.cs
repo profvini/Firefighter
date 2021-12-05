@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class npcScript : MonoBehaviour
+public class npcScript : NetworkBehaviour
 {
     public GameObject npcObj;
     public Transform saveTransform;
@@ -35,12 +36,12 @@ public class npcScript : MonoBehaviour
 
     }
 
-    public void objSave()
+    public void objSave(int saveLifes)
     {
         saveBool = true;
         npcObj.SetActive(true);
         npcAnim.SetTrigger("Saved");
-        npcObj.transform.position = new Vector3(saveTransform.position.x,saveTransform.position.y,saveTransform.position.z);
+        npcObj.transform.position = new Vector3(saveTransform.position.x,saveTransform.position.y,saveTransform.position.z - (saveLifes * 1.34f));
         npcObj.transform.eulerAngles = new Vector3(0, 90, 0);
         npcObj.tag = "Saved";
     }

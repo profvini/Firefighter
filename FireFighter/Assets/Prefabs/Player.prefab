@@ -167,6 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8052751b288c5a94d83fe2af0e761eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   controller: {fileID: 2004814408747498399}
   speed: 4
   gravity: -19.62
@@ -178,6 +180,7 @@ MonoBehaviour:
     m_Bits: 512
   distanceOfRaycast: 4
   isPause: 0
+  panels: {fileID: 0}
   panelPause: {fileID: 5345542901819041603, guid: a3026a037e91df449b4003e3800f9f1f,
     type: 3}
   panelDeath: {fileID: 757782073291534977, guid: 00abeef49b82b14438bc84b7772dcaec,
@@ -187,11 +190,10 @@ MonoBehaviour:
   saveBar: {fileID: 4311324369977696677, guid: dbdb31a89c7796744bfd8bc79af89503, type: 3}
   saveBartext: {fileID: 5841542069451774175, guid: ee928889011253f43ac41aca6e98557f,
     type: 3}
+  oxigImage: {fileID: 0}
   saveImage: {fileID: 4311324369977696683, guid: dbdb31a89c7796744bfd8bc79af89503,
     type: 3}
   saveImageBG: {fileID: 7532493190709583232, guid: f44cd3462bd36774db905a0b3d6a8789,
-    type: 3}
-  oxigImage: {fileID: 2454485070159967574, guid: 2f28a9355c3d34b45ac25ecd546d4b86,
     type: 3}
   imgCarrying: {fileID: 4085819135479680958, guid: b86debd1c2c3a514bb281cb09a628a6a,
     type: 3}
