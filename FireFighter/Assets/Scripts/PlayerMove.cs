@@ -204,7 +204,7 @@ public class PlayerMove : NetworkBehaviour
                 saveFloat = 0f;
             }
 
-            if (_hit.transform.CompareTag("Obj"))
+            if (_hit.transform.CompareTag("Obj") || _hit.transform.CompareTag("hotZone"))
             {
                 saveImageBG.SetActive(true);
             }

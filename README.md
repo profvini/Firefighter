@@ -21,3 +21,8 @@ se encha, após isto, o fogo se apagará e você poderá passar. Quando encontra
 pedindo que você segure o botão do mouse aparecerá novamente, e fazendo isto, você agora está carregando a pessoa. 
 Seu oxigênio desse mais rápido e você se move mais lentamente, leve-o rapidamente para a safe-zone!
 
+## Checkpoints
+# 29/11/21
+* Spawns randômicos implementandos corretamente e funcionando, o método foi deixar os npcs desativados e 
+ativa-los randomicamente durante o início do jogo. Fogo está apagando corretamente, mas temos problemas com a câmera
+e com a UI. UI não funcionando corretamente e câmera parcialmente.

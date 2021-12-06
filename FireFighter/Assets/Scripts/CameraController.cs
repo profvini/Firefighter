@@ -48,7 +48,7 @@ public class CameraController : MonoBehaviour
 
             if (mouseLook.y > -70 || mouseLook.y <= 90)
             {
-                _camera.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+                _camera.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.forward);
             }
         }
     }
