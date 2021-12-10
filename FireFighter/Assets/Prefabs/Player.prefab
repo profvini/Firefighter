@@ -191,10 +191,8 @@ MonoBehaviour:
   saveBartext: {fileID: 5841542069451774175, guid: ee928889011253f43ac41aca6e98557f,
     type: 3}
   oxigImage: {fileID: 0}
-  saveImage: {fileID: 4311324369977696683, guid: dbdb31a89c7796744bfd8bc79af89503,
-    type: 3}
-  saveImageBG: {fileID: 7532493190709583232, guid: f44cd3462bd36774db905a0b3d6a8789,
-    type: 3}
+  saveImage: {fileID: 0}
+  saveImageBG: {fileID: 0}
   imgCarrying: {fileID: 4085819135479680958, guid: b86debd1c2c3a514bb281cb09a628a6a,
     type: 3}
   saveFloat: 0
@@ -202,8 +200,7 @@ MonoBehaviour:
   oxigFloat: 100
   lostOxig: 0.3
   canHit: 1
-  crosshair: {fileID: 5389392084764123626, guid: 308c042bab73bce46be008f0acaf87d5,
-    type: 3}
+  crosshair: {fileID: 0}
   savePerson: {fileID: 0}
   saveLifes: 0
   txtSaveLifes: {fileID: 2735190218749839265, guid: aaa0942120e54f745b89d65855545d7e,

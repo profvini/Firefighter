@@ -33,13 +33,13 @@ public class CameraController : MonoBehaviour
         if (mouseLook.y < -70)
         {
             mouseLook.y = -70f;
-            Debug.Log("aqui embaixo");
+           
         }
            
         if (mouseLook.y >= 90)
         {
             mouseLook.y = 90f;
-            Debug.Log("aqui em cima");
+            
         }
             
         if (_playerM.isPause == false)

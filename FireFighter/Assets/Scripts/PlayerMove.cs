@@ -195,14 +195,7 @@ public class PlayerMove : NetworkBehaviour
 
             }
 
-            if (Input.GetButtonUp("Fire1"))
-            {
-                saveBar.SetActive(false);
-                saveBartext.SetActive(false);
-                saveImage.GetComponent<Image>().fillAmount = 0;
-
-                saveFloat = 0f;
-            }
+           
 
             if (_hit.transform.CompareTag("Obj") || _hit.transform.CompareTag("hotZone"))
             {
@@ -221,6 +214,10 @@ public class PlayerMove : NetworkBehaviour
                 _hit.transform.gameObject.GetComponent<doorScript>().objInterection();
                 Invoke("canHitAgain", 1f);
             }
+            else
+            {
+                saveImageBG.SetActive(false);
+            }
 
             if (Input.GetButtonDown("Fire1") && _hit.transform.CompareTag("OpenDoor"))
             {
@@ -238,16 +235,26 @@ public class PlayerMove : NetworkBehaviour
                 if (saveFloat >= 100)
                 {
                     Destroy(_hit.transform.gameObject);
+                    saveFloat = 0;
                 }
             }
-            /*
+            
             else
             {
                 saveBar.SetActive(false);
                 saveBartext.SetActive(false);
 
                 saveFloat = 0f;
-            }*/
+            }
+
+            if (Input.GetButtonUp("Fire1"))
+            {
+                saveBar.SetActive(false);
+                saveBartext.SetActive(false);
+                saveImage.GetComponent<Image>().fillAmount = 0;
+
+                saveFloat = 0f;
+            }
         }
     }
     void crosshairHit()
