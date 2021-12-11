@@ -7,7 +7,7 @@ using Mirror;
 
 //Colocar os paineis em um script separado já presente no jogo
 
-public class PlayerMove : NetworkBehaviour
+public class PlayerMoveSemCam : NetworkBehaviour
 {
     public CharacterController controller;
     public float speed = 12f;
@@ -60,10 +60,16 @@ public class PlayerMove : NetworkBehaviour
 
     }
 
-    void Start()
-    {     
-        
+    public override void OnStartLocalPlayer()
+    {
+        Camera.main.transform.SetParent(transform);
+        Camera.main.transform.localPosition = new Vector3(0, 0.756f, 0);
+    }
 
+    void Start()
+    {
+        Camera.main.GetComponent<MouseLook>().enabled = true;
+        Camera.main.GetComponent<MouseLook>().playerBody = transform;
         _ps = GetComponent<ParticleSystem>();
 
         
@@ -158,7 +164,7 @@ public class PlayerMove : NetworkBehaviour
             {
                 crosshairHit();
 
-                if (_hit.transform.CompareTag("Obj") && !isPause)
+                if (_hit.transform.CompareTag("Obj") || _hit.transform.CompareTag("hotZone") && !isPause)
                 {
                     panel.saveImageBG.GetComponent<Image>().enabled = true;
                     panel.saveBartext.SetActive(true);
@@ -238,6 +244,7 @@ public class PlayerMove : NetworkBehaviour
                     if (saveFloat >= 100)
                     {
                         Destroy(_hit.transform.gameObject);
+                        saveFloat = 0;
                     }
                 }
                 /*
@@ -300,7 +307,7 @@ public class PlayerMove : NetworkBehaviour
             //som de salvando uma pessoa pode ser stay here.
             // I will be back
             isCarrying = false;
-            imgCarrying.enabled = false;
+            panel.imgCarrying.SetActive(false);
             if (savePerson != null)
             {
                 savePerson.transform.gameObject.GetComponent<npcScript>().objSave(saveLifes);
