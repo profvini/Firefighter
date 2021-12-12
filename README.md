@@ -4,7 +4,7 @@ Repositório do projeto final da cadeira de Jogos Multiplayer
 ## Autores do Projeto:
 * Leonardo Korzenowski Saraiva, Gabriel de Oliveira Pedroso e Thiago Gregory Araujo
 
-# Conncept do Jogo:
+# Concept do Jogo:
 * Jogo de simulação de bombeiros onde um bombeiro deve resgatar pessoas presas em uma casa pegando fogo. 
 Ele deve vasculhar os cômodos de casa em busca destas pessoas. Seu temop é limitado pela barra de oxigênio
 que reduz constantemente. Caso o oxigênio chegue ao fim, game over. Portas podem ser abertas para entrar
