@@ -234,7 +234,7 @@ public class PlayerMoveSemCam : NetworkBehaviour
                     _hit.transform.gameObject.GetComponent<doorScript>().objInterection();
                 }
 
-                if (Input.GetButton("Fire1") && _hit.transform.CompareTag("hotZone"))
+                if (Input.GetButton("Fire1") && _hit.transform.CompareTag("hotZone") && !isCarrying && !isPause && !isDead )
                 {
                     saveFloat += Time.deltaTime * 20f;
                     panel.saveBar.SetActive(true);
@@ -243,18 +243,21 @@ public class PlayerMoveSemCam : NetworkBehaviour
 
                     if (saveFloat >= 100)
                     {
+                        panel.saveBar.GetComponent<Image>().fillAmount = 0;
+                        panel.saveBar.SetActive(false);
+                        panel.saveBartext.SetActive(false);
                         Destroy(_hit.transform.gameObject);
                         saveFloat = 0;
                     }
                 }
 
-                else
-                {
-                    //saveBar.SetActive(false);
-                    //saveBartext.SetActive(false);
+                //else
+                //{
+                //    //saveBar.SetActive(false);
+                //    //saveBartext.SetActive(false);
 
-                    saveFloat = 0f;
-                }
+                //    saveFloat = 0f;
+                //}
             }
         }
     }
