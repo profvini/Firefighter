@@ -64,6 +64,8 @@ public class PlayerMoveSemCam : NetworkBehaviour
     {
         Camera.main.transform.SetParent(transform);
         Camera.main.transform.localPosition = new Vector3(0, 0.756f, 0);
+
+        panel.menuJoin.SetActive(false);
     }
 
     void Start()
@@ -246,7 +248,7 @@ public class PlayerMoveSemCam : NetworkBehaviour
                         panel.saveBar.GetComponent<Image>().fillAmount = 0;
                         panel.saveBar.SetActive(false);
                         panel.saveBartext.SetActive(false);
-                        Destroy(_hit.transform.gameObject);
+                        _hit.transform.gameObject.SetActive(false);
                         saveFloat = 0;
                     }
                 }

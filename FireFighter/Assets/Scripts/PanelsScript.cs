@@ -6,6 +6,7 @@ using Mirror;
 
 public class PanelsScript : NetworkBehaviour
 {
+    public GameObject menuJoin;
     public GameObject panels, panelPause, panelDeath, panelEnd;
     public GameObject saveBar, saveBartext;
     public GameObject imgCarrying, oxigImage, saveImage, saveImageBG;
