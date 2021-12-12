@@ -25,11 +25,11 @@ public class PlayerMove : NetworkBehaviour
 
     public bool isPause = false;
     //public GameObject panels, panelPause, panelDeath, panelEnd;
-    
+
 
     RaycastHit _hit;
 
-    //public GameObject saveBar, saveBartext, oxigImage, saveImage, saveImageBG;
+    public GameObject saveBar, saveBartext, oxigImage, saveImage, saveImageBG;
     public Image imgCarrying; //oxigImage, saveImage, saveImageBG
     public float saveFloat = 0f;
 
@@ -61,12 +61,12 @@ public class PlayerMove : NetworkBehaviour
     }
 
     void Start()
-    {     
-        
+    {
+
 
         _ps = GetComponent<ParticleSystem>();
 
-        
+
 
 
         isDead = false;
@@ -133,7 +133,6 @@ public class PlayerMove : NetworkBehaviour
             if (Input.GetButtonDown("Jump") && isGrounded)
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-                Debug.Log("Pulo");
             }
 
             velocity.y += gravity * Time.deltaTime;
@@ -173,6 +172,7 @@ public class PlayerMove : NetworkBehaviour
 
                 if (Input.GetButton("Fire1") && _hit.transform.CompareTag("Obj") && !isCarrying && !isPause && !isDead)
                 {
+                    
                     saveFloat += Time.deltaTime * 20f;
                     panel.saveBar.SetActive(true);
                     panel.saveBartext.SetActive(true);
@@ -180,6 +180,7 @@ public class PlayerMove : NetworkBehaviour
 
                     if (saveFloat >= 100)
                     {
+                        Debug.Log("salvando pessoa");
                         panel.saveBar.GetComponent<Image>().fillAmount = 0;
                         panel.saveBar.SetActive(false);
                         panel.saveBartext.SetActive(false);
@@ -197,12 +198,38 @@ public class PlayerMove : NetworkBehaviour
 
                 if (Input.GetButtonUp("Fire1"))
                 {
-                    //panel.saveBar.SetActive(false);
-                    //panel.saveBartext.SetActive(false);
+                    panel.saveBar.SetActive(false);
+                    panel.saveBartext.SetActive(false);
                     panel.saveBar.GetComponent<Image>().fillAmount = 0;
 
                     saveFloat = 0f;
                 }
+
+                if (Input.GetButton("Fire1") && _hit.transform.CompareTag("hotZone"))
+                {
+                    Debug.Log("Entrou");
+                    saveFloat += Time.deltaTime * 20f;
+                    panel.saveBar.SetActive(true);
+                    panel.saveBartext.SetActive(true);
+                    panel.saveImage.GetComponent<Image>().fillAmount = saveFloat / 100;
+
+                    if (saveFloat >= 100)
+                    {
+                        panel.saveBar.GetComponent<Image>().fillAmount = 0;
+                        panel.saveBar.SetActive(false);
+                        panel.saveBartext.SetActive(false);
+                        Destroy(_hit.transform.gameObject);
+                        saveFloat = 0;
+                    }
+                }
+
+                //else
+                //{
+                //    saveBar.SetActive(false);
+                //    saveBartext.SetActive(false);
+
+                //    saveFloat = 0f;
+                //}
 
                 if (_hit.transform.CompareTag("Obj") || _hit.transform.CompareTag("hotZone"))
                 {
@@ -228,26 +255,7 @@ public class PlayerMove : NetworkBehaviour
                 }
 
 
-                if (Input.GetButton("Fire1") && _hit.transform.CompareTag("hotZone"))
-                {
-                    saveFloat += Time.deltaTime * 20f;
-                    panel.saveBar.SetActive(true);
-                    panel.saveBartext.SetActive(true);
-                    panel.saveImage.GetComponent<Image>().fillAmount = saveFloat / 100;
-
-                    if (saveFloat >= 100)
-                    {
-                        Destroy(_hit.transform.gameObject);
-                    }
-                }
-                /*
-                else
-                {
-                    saveBar.SetActive(false);
-                    saveBartext.SetActive(false);
-
-                    saveFloat = 0f;
-                }*/
+              
             }
         }
     }

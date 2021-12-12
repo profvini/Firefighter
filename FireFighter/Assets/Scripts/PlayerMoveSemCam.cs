@@ -24,7 +24,7 @@ public class PlayerMoveSemCam : NetworkBehaviour
     public float distanceOfRaycast;
 
     public bool isPause = false;
-    //public GameObject panels, panelPause, panelDeath, panelEnd;
+    public GameObject panels, panelPause, panelDeath, panelEnd;
     
 
     RaycastHit _hit;
@@ -37,12 +37,12 @@ public class PlayerMoveSemCam : NetworkBehaviour
 
     public float oxigFloat = 100, lostOxig = 0.3f;
     public bool canHit = true;
-    //public GameObject crosshair;
+    public GameObject crosshair;
     //public Image crosshair;
     public GameObject savePerson = null;
 
     public int saveLifes = 0;
-    //public Text txtSaveLifes;
+    public Text txtSaveLifes;
     public bool isDead = false;
 
     private ParticleSystem _ps;
@@ -209,11 +209,12 @@ public class PlayerMoveSemCam : NetworkBehaviour
 
                     saveFloat = 0f;
                 }
-
+              
                 if (_hit.transform.CompareTag("Obj") || _hit.transform.CompareTag("hotZone"))
                 {
                     panel.saveImageBG.SetActive(true);
                 }
+
                 else
                 {
                     panel.saveImageBG.SetActive(false);
@@ -233,13 +234,12 @@ public class PlayerMoveSemCam : NetworkBehaviour
                     _hit.transform.gameObject.GetComponent<doorScript>().objInterection();
                 }
 
-
                 if (Input.GetButton("Fire1") && _hit.transform.CompareTag("hotZone"))
                 {
                     saveFloat += Time.deltaTime * 20f;
                     panel.saveBar.SetActive(true);
                     panel.saveBartext.SetActive(true);
-                    panel.saveImage.GetComponent<Image>().fillAmount = saveFloat / 100;
+                    panel.saveBar.GetComponent<Image>().fillAmount = saveFloat / 100;
 
                     if (saveFloat >= 100)
                     {
@@ -247,17 +247,18 @@ public class PlayerMoveSemCam : NetworkBehaviour
                         saveFloat = 0;
                     }
                 }
-                /*
+
                 else
                 {
-                    saveBar.SetActive(false);
-                    saveBartext.SetActive(false);
+                    //saveBar.SetActive(false);
+                    //saveBartext.SetActive(false);
 
                     saveFloat = 0f;
-                }*/
+                }
             }
         }
     }
+
     void crosshairHit()
     {
         if (_hit.collider.gameObject.CompareTag("Door") || _hit.transform.CompareTag("Obj") || _hit.transform.CompareTag("OpenDoor") || _hit.collider.gameObject.CompareTag("hotZone"))
