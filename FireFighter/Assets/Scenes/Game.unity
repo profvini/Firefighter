@@ -971,7 +971,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: efe7c8033948bb44a8e4fab23a30c5d3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: efe7c8033948bb44a8e4fab23a30c5d3, type: 3}
       propertyPath: m_TagString
@@ -1800,7 +1800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: 4c7e488f27835eb4391e0bed69d14cc3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: 4c7e488f27835eb4391e0bed69d14cc3, type: 3}
       propertyPath: m_TagString
@@ -3754,7 +3754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 3723160585
-  serverOnly: 1
+  serverOnly: 0
   visible: 0
   m_AssetId: efe7c8033948bb44a8e4fab23a30c5d3
   hasSpawned: 0
@@ -4163,7 +4163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100012, guid: e135ae9c94852aa42848587f65d134af, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100012, guid: e135ae9c94852aa42848587f65d134af, type: 3}
       propertyPath: m_TagString
@@ -9361,7 +9361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100012, guid: e135ae9c94852aa42848587f65d134af, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100012, guid: e135ae9c94852aa42848587f65d134af, type: 3}
       propertyPath: m_TagString
@@ -9503,7 +9503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 277894232
-  serverOnly: 1
+  serverOnly: 0
   visible: 0
   m_AssetId: e135ae9c94852aa42848587f65d134af
   hasSpawned: 0
@@ -9827,7 +9827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 3838594239
-  serverOnly: 1
+  serverOnly: 0
   visible: 0
   m_AssetId: e135ae9c94852aa42848587f65d134af
   hasSpawned: 0
@@ -10216,7 +10216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 653592267
-  serverOnly: 1
+  serverOnly: 0
   visible: 0
   m_AssetId: efe7c8033948bb44a8e4fab23a30c5d3
   hasSpawned: 0
@@ -10744,7 +10744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 1764557730
-  serverOnly: 1
+  serverOnly: 0
   visible: 0
   m_AssetId: 4c7e488f27835eb4391e0bed69d14cc3
   hasSpawned: 0
@@ -11993,7 +11993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: efe7c8033948bb44a8e4fab23a30c5d3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: efe7c8033948bb44a8e4fab23a30c5d3, type: 3}
       propertyPath: m_TagString
