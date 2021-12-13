@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004814408420776612}
-  m_LocalRotation: {x: -0, y: -0, z: -0.0010908307, w: 0.9999994}
+  m_LocalRotation: {x: -0, y: -0, z: -0.06540313, w: 0.99785894}
   m_LocalPosition: {x: 0, y: 0.756, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -185,7 +185,8 @@ MonoBehaviour:
   oxigImage: {fileID: 0}
   saveImage: {fileID: 0}
   saveImageBG: {fileID: 0}
-  imgCarrying: {fileID: 4085819135479680958, guid: b86debd1c2c3a514bb281cb09a628a6a, type: 3}
+  imgCarrying: {fileID: 4085819135479680958, guid: b86debd1c2c3a514bb281cb09a628a6a,
+    type: 3}
   saveFloat: 0
   isCarrying: 0
   oxigFloat: 100

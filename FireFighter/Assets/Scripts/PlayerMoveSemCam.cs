@@ -25,7 +25,7 @@ public class PlayerMoveSemCam : NetworkBehaviour
 
     public bool isPause = false;
     public GameObject panels, panelPause, panelDeath, panelEnd;
-    
+
 
     RaycastHit _hit;
 
@@ -54,10 +54,6 @@ public class PlayerMoveSemCam : NetworkBehaviour
     private void Awake()
     {
         panel = GameObject.Find("Panels").GetComponent<PanelsScript>();
-
-
-
-
     }
 
     public override void OnStartLocalPlayer()
@@ -74,7 +70,7 @@ public class PlayerMoveSemCam : NetworkBehaviour
         Camera.main.GetComponent<MouseLook>().playerBody = transform;
         _ps = GetComponent<ParticleSystem>();
 
-        
+
 
 
         isDead = false;
@@ -148,7 +144,7 @@ public class PlayerMoveSemCam : NetworkBehaviour
             controller.Move(velocity * Time.deltaTime);
         }
     }
-
+     
 
 
     void hudAction()
@@ -211,7 +207,7 @@ public class PlayerMoveSemCam : NetworkBehaviour
 
                     saveFloat = 0f;
                 }
-              
+
                 if (_hit.transform.CompareTag("Obj") || _hit.transform.CompareTag("hotZone"))
                 {
                     panel.saveImageBG.SetActive(true);
@@ -236,7 +232,7 @@ public class PlayerMoveSemCam : NetworkBehaviour
                     _hit.transform.gameObject.GetComponent<doorScript>().objInterection();
                 }
 
-                if (Input.GetButton("Fire1") && _hit.transform.CompareTag("hotZone") && !isCarrying && !isPause && !isDead )
+                if (Input.GetButton("Fire1") && _hit.transform.CompareTag("hotZone") && !isCarrying && !isPause && !isDead)
                 {
                     saveFloat += Time.deltaTime * 20f;
                     panel.saveBar.SetActive(true);
