@@ -34,7 +34,7 @@ public class PanelsScript : NetworkBehaviour
     void Start()
     {
         saveLifes = 0;
-        txtSaveLifes.text = "Lifes = " + saveLifes.ToString() + "/4";
+        txtSaveLifes.text = "Lifes = " + saveLifes.ToString() + "/5";
 
         saveBar.SetActive(false);
         saveBartext.SetActive(false);
@@ -49,12 +49,12 @@ public class PanelsScript : NetworkBehaviour
 
     void UISaveLifes(int _Old, int _New)
     {
-        txtSaveLifes.text = "Lifes = " + saveLifes.ToString() + "/4";
+        txtSaveLifes.text = "Lifes = " + saveLifes.ToString() + "/5";
     }
 
     public void addSaveLife()
     {
         saveLifes++;
-        txtSaveLifes.text = "Lifes = " + saveLifes.ToString() + "/4";
+        txtSaveLifes.text = "Lifes = " + saveLifes.ToString() + "/5";
     }
 }
