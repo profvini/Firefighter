@@ -18,7 +18,7 @@ até que a parte seja derrubada. Algumas partes da casa estão bloqueadas por fo
 o fogo. Para apagar o fogo, ao mirar nele, aparecerá uma barra em sua tela dizendo para segurar o LMB até que a barra
 se encha, após isto, o fogo se apagará e você poderá passar. Quando encontrar alguém que precise ser salvo, a barra
 pedindo que você segure o botão do mouse aparecerá novamente, e fazendo isto, você agora está carregando a pessoa. 
-Seu oxigênio desse mais rápido e você se move mais lentamente, leve-o rapidamente para a safe-zone!
+Seu oxigênio desse mais rápido e você se move mais lentamente, leve-o rapidamente para a safe-zone pois eles perdem vida com o tempo!
 
 ## Checkpoints
 
@@ -29,7 +29,7 @@ O jeito que achamos para que o fogo apagasse corretamente e deixasse de bloquear
 colocando um BoxCollider no gameobject do Fogo em si. Desta forma, o interagível é Fogo em si e não algo separado, fazendo
 com que seja muito mais fácil apagar o Fogo. Como fizemos foi parecido com o método com o qual salvamos os NPCs presentes.
 Quando o player segura o botão do mouse, ele enche a barra na UI e juntamente uma variável, que quando chega a 100, checa 
-o hit.transform do objeto mirado, e da Destroy no GameObject. Alguns problemas na UI estão presentes, como quando a barra
+o hit.transform do objeto mirado, e da SetActive(false) no GameObject. Alguns problemas na UI estão presentes, como quando a barra
 termina de preencher e o fogo é apagado, o fogo some, mas a barra na UI continua presente, e não desaparece, muitas vezes
 a variável também continua em 100 e por isso, quando se ia salvar o NPC, acontecia que o player carregava o NPC instantâneamente
 sem a necessidade de encher a barra novamente.

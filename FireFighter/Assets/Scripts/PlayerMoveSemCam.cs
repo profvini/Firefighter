@@ -75,7 +75,8 @@ public class PlayerMoveSemCam : NetworkBehaviour
 
         isDead = false;
         isCarrying = false;
-        //imgCarrying.enabled = false;
+        
+        //Desativa os painéis por padrão
         panel.panelPause.SetActive(false);
         panel.panelDeath.SetActive(false);
         panel.panelEnd.SetActive(false);
@@ -93,17 +94,20 @@ public class PlayerMoveSemCam : NetworkBehaviour
 
             actionPlayer();
 
+            //Caso o player esteja carregando um NPC, sua velocidade cai pela metade e seu oxigênio começa a baixar mais rápido
             if (isCarrying)
             {
                 speed = 3f;
                 lostOxig = 1.0f;
             }
+            //Caso contrário, velocidade maior e menos oxigênio perdido por segundo
             else
             {
                 speed = 6f;
                 lostOxig = 0.5f;
             }
 
+            //Caso oxigênio chegue a 0, game over, chama a fuñção que termina com o jogo
             if (oxigFloat <= 0)
             {
                 isDead = true;
@@ -111,7 +115,7 @@ public class PlayerMoveSemCam : NetworkBehaviour
             }
 
             //numero de saves para vencer o level
-            if (saveLifes >= 3)
+            if (saveLifes >= 5)
             {
                 //Debug.Log("WIN!!!");
                 panel.panelEnd.SetActive(true);
@@ -175,8 +179,11 @@ public class PlayerMoveSemCam : NetworkBehaviour
                     saveFloat = 0f;
                 }
 
+                //Quando o LMB é apertado, e a tag corresponde, e estas boools são falsas, o player enche a variável, que preenche uma barra da UI, que quando chega a 100
+                //permite carregar um NPC
                 if (Input.GetButton("Fire1") && _hit.transform.CompareTag("Obj") && !isCarrying && !isPause && !isDead)
                 {
+                    //Ativa os painés que representam e enche a barrinha
                     saveFloat += Time.deltaTime * 20f;
                     panel.saveBar.SetActive(true);
                     panel.saveBartext.SetActive(true);
@@ -184,6 +191,7 @@ public class PlayerMoveSemCam : NetworkBehaviour
 
                     if (saveFloat >= 100)
                     {
+                        //Quando a variável chega a 100, a barrinha esvazia e o painél é desativado
                         panel.saveBar.GetComponent<Image>().fillAmount = 0;
                         panel.saveBar.SetActive(false);
                         panel.saveBartext.SetActive(false);
@@ -199,6 +207,7 @@ public class PlayerMoveSemCam : NetworkBehaviour
 
                 }
 
+                //Funcionamento básico do LMB
                 if (Input.GetButtonUp("Fire1"))
                 {
                     //panel.saveBar.SetActive(false);
@@ -208,6 +217,7 @@ public class PlayerMoveSemCam : NetworkBehaviour
                     saveFloat = 0f;
                 }
 
+                //Checa se alguma das tags batem quando clica, e ativa os painés respectivos com a tag, sendo obj pro NPC e hotZone pro fogo
                 if (_hit.transform.CompareTag("Obj") || _hit.transform.CompareTag("hotZone"))
                 {
                     panel.saveImageBG.SetActive(true);
@@ -218,7 +228,7 @@ public class PlayerMoveSemCam : NetworkBehaviour
                     panel.saveImageBG.SetActive(false);
                 }
 
-
+                //Se o clique com LMB tiver a tag Door, e o a bool canhit for verdadeira, inverte a bool, chama o script da porta, e reseta a bool
                 if (Input.GetButtonDown("Fire1") && _hit.transform.CompareTag("Door") && canHit)
                 {
                     canHit = false;
@@ -227,11 +237,13 @@ public class PlayerMoveSemCam : NetworkBehaviour
                     Invoke("canHitAgain", 1f);
                 }
 
+                //Se a tag for porta aberta, também chama o script da porta.
                 if (Input.GetButtonDown("Fire1") && _hit.transform.CompareTag("OpenDoor"))
                 {
                     _hit.transform.gameObject.GetComponent<doorScript>().objInterection();
                 }
 
+                //Funcionamento do fogo, feito de forma parecida com o salvar dos NPCs, o principío é o mesmo, o diferencial é que quando chega a 100, ele desativa o gameobject com a tag hotZone
                 if (Input.GetButton("Fire1") && _hit.transform.CompareTag("hotZone") && !isCarrying && !isPause && !isDead)
                 {
                     saveFloat += Time.deltaTime * 20f;
@@ -241,9 +253,11 @@ public class PlayerMoveSemCam : NetworkBehaviour
 
                     if (saveFloat >= 100)
                     {
+                        //Reseta a varíavel pra 0 e desativa os painéis.
                         panel.saveBar.GetComponent<Image>().fillAmount = 0;
                         panel.saveBar.SetActive(false);
                         panel.saveBartext.SetActive(false);
+                        //Desativa o objeto onde se estava mirando, neste caso o Fogo
                         _hit.transform.gameObject.SetActive(false);
                         saveFloat = 0;
                     }
@@ -260,6 +274,7 @@ public class PlayerMoveSemCam : NetworkBehaviour
         }
     }
 
+    //Função que diz que quando o cursor passa em cima de alguma dessas tags ele troca de cor para indicar um interagível
     void crosshairHit()
     {
         if (_hit.collider.gameObject.CompareTag("Door") || _hit.transform.CompareTag("Obj") || _hit.transform.CompareTag("OpenDoor") || _hit.collider.gameObject.CompareTag("hotZone"))
@@ -272,11 +287,13 @@ public class PlayerMoveSemCam : NetworkBehaviour
         }
     }
 
+    //Reseta a booleana
     void canHitAgain()
     {
         canHit = true;
     }
 
+    //Função que ativa o pause do game, que basicamente congelar o jogo, destrancar o cursor do centro da tela e trazer um painél branco na tela para indicar o puase
     void gamePause()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -301,6 +318,8 @@ public class PlayerMoveSemCam : NetworkBehaviour
                 break;
         }
     }
+
+    //Função para quando o player entra na safezone carregando um NPC.
     public void OnTriggerEnter(Collider other)
     {
 
@@ -310,11 +329,14 @@ public class PlayerMoveSemCam : NetworkBehaviour
             // I will be back
             isCarrying = false;
             panel.imgCarrying.SetActive(false);
+            //Se está carregando alguém
             if (savePerson != null)
             {
+                //Spawna a pessoa sentada na safezone e adiciona 1 ao contador de total de vidas salvas
                 savePerson.transform.gameObject.GetComponent<npcScript>().objSave(saveLifes);
                 saveLifes++;
                 panel.addSaveLife();
+                //Desativa a imagem que indica que o player está carregando alguém
                 panel.imgCarrying.SetActive(false);
                 // other.transform.gameObject.GetComponent<npcScript>().objSave();
                 savePerson = null;
@@ -333,6 +355,7 @@ public class PlayerMoveSemCam : NetworkBehaviour
     {
         switch (isDead)
         {
+            //Caso o oxigênio acabe, o tempo basicamente congela, o painél de morte ativa, o cursor destrava do centro da tela e o jogo para.
             case true:
                 Time.timeScale = 0.00000001f;
                 panel.panelDeath.SetActive(true);
@@ -350,6 +373,7 @@ public class PlayerMoveSemCam : NetworkBehaviour
 
     }
 
+    //Reseta e desativa a barrinha que preenche;
     void disableSavingBar()
     {
         panel.saveBar.GetComponent<Image>().fillAmount = 0;

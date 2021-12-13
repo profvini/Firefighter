@@ -16,12 +16,12 @@ public class npcScript : NetworkBehaviour
 
     public void Update()
     {
-
+        //NPC perde vida com o tempo
         if (lifeNpc > 0 && !saveBool)
         {
             lifeNpc -= Time.deltaTime * lessLife;
         }
-
+        //Se a vida chega a 0, o NPC morre
         if (lifeNpc <= 0)
         {
             FindObjectOfType<PlayerMove>().isDead = true;
@@ -29,13 +29,13 @@ public class npcScript : NetworkBehaviour
         }
     }
 
+    //Desativa o NPC no local original quando ele passa a ser carregado pelo player
     public void objInterection()
-    {
-     
+    {  
         npcObj.SetActive(false);
-
     }
 
+    //Muda a posição do NPC que irá spawnar na safezone
     public void objSave(int saveLifes)
     {
         saveBool = true;

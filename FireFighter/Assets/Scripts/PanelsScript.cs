@@ -47,11 +47,13 @@ public class PanelsScript : NetworkBehaviour
         
     }
 
+    //Aumenta o número de vidas salvas
     void UISaveLifes(int _Old, int _New)
     {
         txtSaveLifes.text = "Lifes = " + saveLifes.ToString() + "/5";
     }
 
+    //Aumenta o número de vidas salvas
     public void addSaveLife()
     {
         saveLifes++;

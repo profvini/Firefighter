@@ -13,12 +13,14 @@ public class MouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Tranca o cursor ao centro da tela
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Controla o mouse, o Y está multiplicado por 5, pois sua sensibilidade normal estava alterada, e desta forma, ela fica adequada
         float mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * 5.0f * mouseSens * Time.deltaTime;
 
