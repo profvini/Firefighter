@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2004814408747498393}
   m_LocalRotation: {x: 0.014721005, y: 0.66890645, z: -0.013251839, w: 0.7430827}
   m_LocalPosition: {x: 2.8932304, y: 31.72077, z: -16.927616}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children:
   - {fileID: 2004814409513451036}
   - {fileID: 2004814409204013217}
@@ -143,14 +143,20 @@ MonoBehaviour:
     m_Bits: 0
   distanceOfRaycast: 4
   isPause: 0
+  panels: {fileID: 0}
+  panelPause: {fileID: 0}
+  panelDeath: {fileID: 0}
+  panelEnd: {fileID: 0}
   imgCarrying: {fileID: 0}
   saveFloat: 0
   isCarrying: 0
   oxigFloat: 100
   lostOxig: 0.3
   canHit: 1
+  crosshair: {fileID: 0}
   savePerson: {fileID: 0}
   saveLifes: 0
+  txtSaveLifes: {fileID: 0}
   isDead: 0
   panel: {fileID: 0}
 --- !u!114 &8528166542698086385
