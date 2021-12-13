@@ -47,3 +47,8 @@ do mouse é segurado.  Portas finalmente arrumadas para quebrarem adequadamente,
 Spawn dos NPCs depois de bastante pensamento, foi revertido à modo fixo, pois mesmo com o script rodando, devido ao modo
 como o Network Idendity funciona, spawnando os NPCs independente de como o script funciona.
 
+## Build
+* https://drive.google.com/file/d/1h63HEkzBvSgErHLLEcJWg-H-y7WTcOOd/view?usp=sharing
+
+## Teaser
+* https://youtu.be/9MNGF3UuLWo
