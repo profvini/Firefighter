@@ -48,7 +48,7 @@ Spawn dos NPCs depois de bastante pensamento, foi revertido à modo fixo, pois m
 como o Network Idendity funciona, spawnando os NPCs independente de como o script funciona.
 
 ## Build
-* https://drive.google.com/file/d/1h63HEkzBvSgErHLLEcJWg-H-y7WTcOOd/view?usp=sharing
+* https://drive.google.com/file/d/1IxrKRAm-6mus7prZV4HTrDjoOQRxsPXq/view?usp=sharing
 
 ## Teaser
 * https://youtu.be/9MNGF3UuLWo
