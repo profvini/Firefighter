@@ -42,10 +42,15 @@ eixo Y é consideravelmente mais baixa, chegando até a atrapalhar bastante. Com
 não eram acessíveis, para que elas sejam derrubáveis, mas ela estão com problema, e não estão caindo como deveriam.
 
 # 6/12/21
-* Mecânica do fogo ajustada. Alguns problemas presentes na UI ainda, principalmente na barra que enche quando o botão
-do mouse é segurado.  Portas finalmente arrumadas para quebrarem adequadamente, ajuste no funcionamento dos NPCs devido à erros presentes.
+* Mecânica do fogo ajustada e funcionando adequadamente. Alguns problemas presentes na UI ainda, principalmente na barra que enche quando o botão
+do mouse é segurado para apagar algum fogo. Problemas de câmera em multiplayer no lado do Client, onde o jogador que é o Client usa a câmera do
+host e por isso não consegue controlar sua própria visão.
+
+# 13/12/21
+* Portas finalmente arrumadas para quebrarem adequadamente, ajuste no funcionamento dos NPCs devido à erros presentes.
 Spawn dos NPCs depois de bastante pensamento, foi revertido à modo fixo, pois mesmo com o script rodando, devido ao modo
-como o Network Idendity funciona, spawnando os NPCs independente de como o script funciona.
+como o Network Idendity funciona, spawnando os NPCs independente de como o script funciona. Cãmera do Client arrumada.
+Foi tirada a retirada a câmera do prefab do player, pois estava dando conflito.
 
 ## Build
 * https://drive.google.com/file/d/1IxrKRAm-6mus7prZV4HTrDjoOQRxsPXq/view?usp=sharing
